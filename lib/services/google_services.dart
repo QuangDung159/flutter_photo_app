@@ -20,7 +20,7 @@ class GoogleInfo extends GetxController {
 
 class GoogleServices {
   static String? clientId = Platform.isIOS
-      ? '108486831143-1hrtn3h0t65m1abjup0ovt1mq0rj7m3e.apps.googleusercontent.com'
+      ? '108486831143-isjt7gtmd6mdtgmarbgt1k7ihf30ngq7.apps.googleusercontent.com'
       : null;
 
   static final GoogleSignIn _googleSignIn = GoogleSignIn(
