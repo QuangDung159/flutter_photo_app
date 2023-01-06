@@ -1,8 +1,8 @@
 import 'dart:io';
-
 import 'package:get/state_manager.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:http/http.dart' as http;
+import 'package:get/get.dart';
 
 class GoogleInfo extends GetxController {
   RxString photoUrl = ''.obs;
@@ -16,6 +16,14 @@ class GoogleInfo extends GetxController {
     this.email.value = email ?? '';
     this.openid.value = openid ?? '';
     this.displayName.value = displayName ?? '';
+  }
+}
+
+class GetxNotification extends GetxController {
+  RxString fcmToken = ''.obs;
+
+  void setData({String? fcmToken}) {
+    this.fcmToken.value = fcmToken ?? '';
   }
 }
 
@@ -33,7 +41,16 @@ class GoogleServices {
     return _googleSignIn.signIn();
   }
 
-  static Future pushNotification() async {
+  static Future pushNotification({
+    required String title,
+    required String body,
+  }) async {
+    GetxNotification notification = Get.find<GetxNotification>();
+    String? fcmToken = notification.fcmToken.value;
+    if (fcmToken == '') {
+      throw Exception('FCM token required');
+    }
+
     Map<String, String> headers = {
       'Content-type': 'application/json',
       'Authorization':
@@ -41,9 +58,9 @@ class GoogleServices {
     };
 
     String json =
-        '{"to" : "c6ScRKq-TLaf04lHh1IhlR:APA91bF1yqQcwfMi9ArjUO0dXETBPbBFypSsf6ZkvCff-8Ca-x7qmsfP4eSx2ZIRfmGbZyJvYxadrciYa6UgUePi7wvF5E_z-Ap8ewLNQjMaZ9bVEtrDsuqjq1Hanv3Ca919lDJuOeCB","notification" : {"body" : "Body of Your Notification","title": "Title of Your Notification q23123123"}}';
+        '{"to" : "$fcmToken","notification" : {"body" : "$body","title": "$title"}}';
 
-    final res =  await http.post(
+    final res = await http.post(
       Uri.parse('https://fcm.googleapis.com/fcm/send'),
       headers: headers,
       body: json,

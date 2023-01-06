@@ -70,7 +70,7 @@ class UserProfileScreen extends StatelessWidget {
             Container(
               padding: EdgeInsets.only(top: 10),
               child: CElevatedButton(
-                onPressed: () => GoogleServices.pushNotification(),
+                onPressed: () => GoogleServices.pushNotification(title: 'Hi there', body: 'Welcome to summoner\'s rift'),
                 height: 30,
                 width: 120,
                 child: Text(

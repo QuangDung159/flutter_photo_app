@@ -21,9 +21,24 @@ void main() async {
 
   FirebaseMessaging messaging = FirebaseMessaging.instance;
 
-  final fcmToken = await FirebaseMessaging.instance.getToken();
+  final fcmToken = await messaging.getToken();
 
-  print('fcmToken: $fcmToken');
+  GetxNotification notification = Get.put(GetxNotification());
+  if (fcmToken != null && fcmToken != '') {
+    notification.setData(fcmToken: fcmToken);
+  }
+
+  NotificationSettings settings = await messaging.requestPermission(
+    alert: true,
+    announcement: false,
+    badge: true,
+    carPlay: false,
+    criticalAlert: false,
+    provisional: false,
+    sound: true,
+  );
+
+  print('fcmToken: ${notification.fcmToken}');
 
   runApp(MyApp());
 }
