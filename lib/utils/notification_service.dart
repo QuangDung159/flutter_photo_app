@@ -75,7 +75,7 @@ class NotificationService {
 
     final details = await _localNotifications.getNotificationAppLaunchDetails();
     if (details != null && details.didNotificationLaunchApp) {
-      behaviorSubject.add(details.payload!);
+      behaviorSubject.add(details.payload ?? '');
     }
 
     NotificationDetails platformChannelSpecifics = NotificationDetails(
@@ -116,7 +116,7 @@ class NotificationService {
 
     final details = await _localNotifications.getNotificationAppLaunchDetails();
     if (details != null && details.didNotificationLaunchApp) {
-      behaviorSubject.add(details.payload!);
+      behaviorSubject.add(details.payload ?? '');
     }
 
     NotificationDetails platformChannelSpecifics = NotificationDetails(
