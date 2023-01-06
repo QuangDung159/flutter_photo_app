@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_photo_app/common/constants.dart';
+import 'package:flutter_photo_app/screens/MyHomePage.dart';
 import 'package:flutter_photo_app/screens/components/home_tab_grid_photos.dart';
 import 'package:flutter_photo_app/screens/components/home_tab_list_post.dart';
 import 'package:flutter_photo_app/screens/components/main_app_bar.dart';
@@ -29,6 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
     HomeTabGridPhoto(),
     HomeTabListPost(),
     // HomeTabListAlbum(),
+    MyHomePage()
   ];
 
   @override
@@ -57,6 +59,10 @@ class _HomeScreenState extends State<HomeScreen> {
           //   icon: Icon(Icons.abc),
           //   label: 'List album',
           // ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.abc),
+            label: 'My Home',
+          ),
         ],
         currentIndex: _selectedIndex,
         onTap: onTap,
