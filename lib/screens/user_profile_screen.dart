@@ -66,6 +66,21 @@ class UserProfileScreen extends StatelessWidget {
                   ),
                 ),
               ),
+            ),
+            Container(
+              padding: EdgeInsets.only(top: 10),
+              child: CElevatedButton(
+                onPressed: () => GoogleServices.pushNotification(),
+                height: 30,
+                width: 120,
+                child: Text(
+                  'Push notification',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
             )
           ],
         ),

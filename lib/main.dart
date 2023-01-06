@@ -6,7 +6,7 @@ import 'package:flutter_photo_app/screens/home_screen.dart';
 import 'package:flutter_photo_app/services/google_services.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-
+import 'package:firebase_messaging/firebase_messaging.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,10 +14,16 @@ void main() async {
   // init firebase service
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-);
+  );
 
   // init local storage
   await GetStorage.init();
+
+  FirebaseMessaging messaging = FirebaseMessaging.instance;
+
+  final fcmToken = await FirebaseMessaging.instance.getToken();
+
+  print('fcmToken: $fcmToken');
 
   runApp(MyApp());
 }
