@@ -10,8 +10,13 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
 class UserProfileScreen extends StatelessWidget {
-  UserProfileScreen({super.key});
-  final GoogleInfo googleInfo = Get.put(GoogleInfo());
+  UserProfileScreen({
+    super.key,
+    this.payload,
+  });
+
+  final GoogleInfo googleInfo = Get.find<GoogleInfo>();
+  final String? payload;
 
   void onLogout() async {
     GetStorage().remove('PHOTO_URL');
@@ -67,21 +72,6 @@ class UserProfileScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
-              padding: EdgeInsets.only(top: 10),
-              child: CElevatedButton(
-                onPressed: () => GoogleServices.pushNotification(title: 'Hi there', body: 'Welcome to summoner\'s rift'),
-                height: 30,
-                width: 120,
-                child: Text(
-                  'Push notification',
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            )
           ],
         ),
       ),

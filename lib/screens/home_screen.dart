@@ -18,7 +18,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
-  final googleInfo = Get.put(GoogleInfo());
+  final GoogleInfo googleInfo = Get.put(GoogleInfo());
 
   void onTap(index) {
     setState(() {
