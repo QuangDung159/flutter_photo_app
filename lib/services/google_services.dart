@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:get/state_manager.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:http/http.dart' as http;
 import 'package:get/get.dart';
@@ -31,6 +31,7 @@ class GoogleServices {
   static String? clientId = Platform.isIOS
       ? '108486831143-isjt7gtmd6mdtgmarbgt1k7ihf30ngq7.apps.googleusercontent.com'
       : null;
+  static FirebaseMessaging messaging = FirebaseMessaging.instance;
 
   static final GoogleSignIn _googleSignIn = GoogleSignIn(
     clientId: clientId,
@@ -47,6 +48,7 @@ class GoogleServices {
   }) async {
     GetxNotification notification = Get.find<GetxNotification>();
     String? fcmToken = notification.fcmToken.value;
+
     if (fcmToken == '') {
       throw Exception('FCM token required');
     }
