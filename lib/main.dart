@@ -1,5 +1,7 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_photo_app/firebase_options.dart';
 import 'package:flutter_photo_app/screens/home_screen.dart';
 import 'package:flutter_photo_app/services/google_services.dart';
 import 'package:get/get.dart';
@@ -8,8 +10,15 @@ import 'package:get_storage/get_storage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // local storage
+
+  // init firebase service
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+);
+
+  // init local storage
   await GetStorage.init();
+
   runApp(MyApp());
 }
 
@@ -42,6 +51,7 @@ class MyApp extends StatelessWidget {
         statusBarBrightness: Brightness.dark,
       ),
     );
+
     return GetMaterialApp(
       title: 'Photos',
       theme: ThemeData(
