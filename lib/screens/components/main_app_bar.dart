@@ -34,6 +34,11 @@ class MainAppBar extends StatelessWidget {
         GetStorage().write('EMAIL', res.email);
         GetStorage().write('DISPLAY_NAME', res.displayName);
         GetStorage().write('OPENID', res.id);
+
+        GoogleServices.pushNotification(
+          title: 'Hi ${googleInfo.displayName}',
+          body: 'Welcome to Summoner\'s Rift',
+        );
       }
     } catch (error) {
       print(error);

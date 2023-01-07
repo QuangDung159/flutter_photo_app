@@ -10,8 +10,13 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
 class UserProfileScreen extends StatelessWidget {
-  UserProfileScreen({super.key});
-  final GoogleInfo googleInfo = Get.put(GoogleInfo());
+  UserProfileScreen({
+    super.key,
+    this.payload,
+  });
+
+  final GoogleInfo googleInfo = Get.find<GoogleInfo>();
+  final String? payload;
 
   void onLogout() async {
     GetStorage().remove('PHOTO_URL');
@@ -66,7 +71,7 @@ class UserProfileScreen extends StatelessWidget {
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
