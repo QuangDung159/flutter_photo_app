@@ -25,6 +25,8 @@ void main() async {
 
   final fcmToken = await messaging.getToken();
 
+  print('fcmToken: $fcmToken');
+
   GetxNotification notification = Get.put(GetxNotification());
   if (fcmToken != null && fcmToken != '') {
     notification.setData(fcmToken: fcmToken);
@@ -47,7 +49,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    
+
     notificationService = NotificationService();
     notificationService.initializePlatformNotifications();
     // listenToNotificationStream();
@@ -55,6 +57,7 @@ class _MyAppState extends State<MyApp> {
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       if (message.notification != null) {
         final messageNotification = message.notification!;
+        print(messageNotification);
         notificationService.showLocalNotification(
           id: 0,
           title: messageNotification.title ?? 'N/a',
