@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           Container(
             margin: const EdgeInsets.only(bottom: 100),
-            child: Image.asset("assets/images/justwater.png", scale: 0.6),
+            child: Image.asset('assets/images/justwater.png', scale: 0.6),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,

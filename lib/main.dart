@@ -50,7 +50,7 @@ class _MyAppState extends State<MyApp> {
     
     notificationService = NotificationService();
     notificationService.initializePlatformNotifications();
-    listenToNotificationStream();
+    // listenToNotificationStream();
 
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       if (message.notification != null) {
@@ -59,7 +59,7 @@ class _MyAppState extends State<MyApp> {
           id: 0,
           title: messageNotification.title ?? 'N/a',
           body: messageNotification.body ?? 'N/a',
-          payload: 'payload',
+          payload: 'user_profile_screen',
         );
       }
     });

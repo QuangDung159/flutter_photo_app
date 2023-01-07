@@ -3,7 +3,9 @@ import 'dart:ui';
 
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_native_timezone/flutter_native_timezone.dart';
+import 'package:flutter_photo_app/screens/user_profile_screen.dart';
 import 'package:flutter_photo_app/utils/download_util.dart';
+import 'package:get/get.dart';
 import 'package:rxdart/subjects.dart';
 import 'package:timezone/data/latest_all.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
@@ -16,7 +18,7 @@ class NotificationService {
   final _localNotifications = FlutterLocalNotificationsPlugin();
   Future<void> initializePlatformNotifications() async {
     const AndroidInitializationSettings initializationSettingsAndroid =
-        AndroidInitializationSettings('ic_stat_justwater');
+        AndroidInitializationSettings('ic_logo');
 
     final IOSInitializationSettings initializationSettingsIOS =
         IOSInitializationSettings(
@@ -46,8 +48,8 @@ class NotificationService {
 
   Future<NotificationDetails> _notificationDetails() async {
     final bigPicture = await DownloadUtil.downloadAndSaveFile(
-        "https://images.unsplash.com/photo-1624948465027-6f9b51067557?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-        Platform.isIOS ? "drinkwater.jpg" : "drinkwater");
+        'https://lh3.googleusercontent.com/3i3ZbEBIj1SE7KEstNzBcmryg3KmLNzseBtqK1EJfXmnjKRfyu-JzbE3Ga61XD6x68LNzy4QeJkW7s6wZQtnNquFoTm6yE2ZD-HZoi1alZq823rqua48jYVg_jjrXdIDuNSyfMVsrdY1oCdobxBimiw7VguSKm1NlK0bcamvItyjomPY_iBUnaFTvbGnPqJZhA18K-4DdW_Z-kp7FYH6BrDlR2qk5dR_tMied3M3qRkTistC90J-Nb-aVatA9qf62iKgNXyN78y_UrgHS8uExbrugv7leXfYVnYqCbKpzqcrv82Sn_YUB92GNQhcYF2CQETMONFrUKK2E5me1vyRGar-QdlGSC7oEAJZ6isSduxhS5KjGEnZ7LMiVjppBwF4kS8vgmjdKdj798jvnTwt7tF3ql8dBa-TAZuBZSExsMVSI3iAY036rK7DraO1ez1bKAP19nWObH07MFwPklRpU8ycqBU4KL3tDVpH6JB-RKMDmDGEKmVwzw_5gt_xYzkVp0bf27XxTTZyL6xWqum3bueKm2ymgBdOnfFo-imw0mfHt5GAEpPo1sqPHi-YZgo7Y_Qv77YtttOdEaeR5qyWv9ACtAohWdXIA_s72ODD1QK_WReiVjXhjL0DLY-D260nIAekRq2FHzztU-wwCKQJbq7M4l0Qupgp_1KndnV9lL1slqfHpsgsnREDSh1_=w2044-h1532-no',
+        Platform.isIOS ? 'drinkwater.jpg' : 'drinkwater');
 
     AndroidNotificationDetails androidPlatformChannelSpecifics =
         AndroidNotificationDetails(
@@ -237,8 +239,8 @@ class NotificationService {
   }
 
   void selectNotification(String? payload) {
-    if (payload != null && payload.isNotEmpty) {
-      behaviorSubject.add(payload);
+    if (payload == 'user_profile_screen') {
+      Get.to(() => UserProfileScreen());
     }
   }
 
