@@ -57,7 +57,6 @@ class _MyAppState extends State<MyApp> {
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       if (message.notification != null) {
         final messageNotification = message.notification!;
-        print(messageNotification);
         notificationService.showLocalNotification(
           id: 0,
           title: messageNotification.title ?? 'N/a',
