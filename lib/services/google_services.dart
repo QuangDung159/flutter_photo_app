@@ -29,7 +29,7 @@ class GetxNotification extends GetxController {
 
 class GoogleServices {
   static String? clientId = Platform.isIOS
-      ? '108486831143-isjt7gtmd6mdtgmarbgt1k7ihf30ngq7.apps.googleusercontent.com'
+      ? '108486831143-tvm13jku14tb20l6ksc82191ubjfts77.apps.googleusercontent.com'
       : null;
   static FirebaseMessaging messaging = FirebaseMessaging.instance;
 

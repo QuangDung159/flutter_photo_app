@@ -7,42 +7,6 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:108486831143:android:e402beb5475cb14991f202",
-        "android_client_info": {
-          "package_name": "com.lqd.flutter_photo_app"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "108486831143-jiq1kotuffic3r5ss1um0gluq6dljn1l.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCFLKRSAdzOI9HTAeHNRavTGH8GR8NRKJw"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "108486831143-jiq1kotuffic3r5ss1um0gluq6dljn1l.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "108486831143-isjt7gtmd6mdtgmarbgt1k7ihf30ngq7.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.lqd.flutterPhotoApp"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:108486831143:android:c3d00f119ba3002a91f202",
         "android_client_info": {
           "package_name": "com.lqd.flutter_photo_app"
@@ -70,7 +34,7 @@
               "client_id": "108486831143-isjt7gtmd6mdtgmarbgt1k7ihf30ngq7.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.lqd.flutterPhotoApp"
+                "bundle_id": "com.example.flutterPhotoApp"
               }
             }
           ]

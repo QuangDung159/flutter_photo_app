@@ -62,23 +62,23 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyAeGLlin6WsL4qSlF90mKq6rNfh9eTkqlo',
-    appId: '1:108486831143:ios:c0ff59d5f8efdc2f91f202',
+    appId: '1:108486831143:ios:89126cc9ea3e04be91f202',
     messagingSenderId: '108486831143',
     projectId: 'flutter-photo-app-373902',
     storageBucket: 'flutter-photo-app-373902.appspot.com',
     androidClientId: '108486831143-chprnl8rcukjhp5o0s4b0l0hvn27dh82.apps.googleusercontent.com',
-    iosClientId: '108486831143-isjt7gtmd6mdtgmarbgt1k7ihf30ngq7.apps.googleusercontent.com',
+    iosClientId: '108486831143-tvm13jku14tb20l6ksc82191ubjfts77.apps.googleusercontent.com',
     iosBundleId: 'com.lqd.flutterPhotoApp',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyAeGLlin6WsL4qSlF90mKq6rNfh9eTkqlo',
-    appId: '1:108486831143:ios:c0ff59d5f8efdc2f91f202',
+    appId: '1:108486831143:ios:89126cc9ea3e04be91f202',
     messagingSenderId: '108486831143',
     projectId: 'flutter-photo-app-373902',
     storageBucket: 'flutter-photo-app-373902.appspot.com',
     androidClientId: '108486831143-chprnl8rcukjhp5o0s4b0l0hvn27dh82.apps.googleusercontent.com',
-    iosClientId: '108486831143-isjt7gtmd6mdtgmarbgt1k7ihf30ngq7.apps.googleusercontent.com',
+    iosClientId: '108486831143-tvm13jku14tb20l6ksc82191ubjfts77.apps.googleusercontent.com',
     iosBundleId: 'com.lqd.flutterPhotoApp',
   );
 }
