@@ -68,7 +68,7 @@ class DefaultFirebaseOptions {
     storageBucket: 'flutter-photo-app-373902.appspot.com',
     androidClientId: '108486831143-chprnl8rcukjhp5o0s4b0l0hvn27dh82.apps.googleusercontent.com',
     iosClientId: '108486831143-isjt7gtmd6mdtgmarbgt1k7ihf30ngq7.apps.googleusercontent.com',
-    iosBundleId: 'com.example.flutterPhotoApp',
+    iosBundleId: 'com.lqd.flutterPhotoApp',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
@@ -79,6 +79,6 @@ class DefaultFirebaseOptions {
     storageBucket: 'flutter-photo-app-373902.appspot.com',
     androidClientId: '108486831143-chprnl8rcukjhp5o0s4b0l0hvn27dh82.apps.googleusercontent.com',
     iosClientId: '108486831143-isjt7gtmd6mdtgmarbgt1k7ihf30ngq7.apps.googleusercontent.com',
-    iosBundleId: 'com.example.flutterPhotoApp',
+    iosBundleId: 'com.lqd.flutterPhotoApp',
   );
 }

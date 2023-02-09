@@ -55,7 +55,7 @@ class NotificationService {
         AndroidNotificationDetails(
       'channel id',
       'channel name',
-      groupKey: 'com.example.flutter_photo_app',
+      groupKey: 'com.lqd.flutter_photo_app',
       channelDescription: 'channel description',
       importance: Importance.max,
       priority: Priority.max,
@@ -102,7 +102,7 @@ class NotificationService {
         const AndroidNotificationDetails(
       'channel id',
       'channel name',
-      groupKey: 'com.example.flutter_photo_app',
+      groupKey: 'com.lqd.flutter_photo_app',
       channelDescription: 'channel description',
       setAsGroupSummary: true,
       importance: Importance.max,

@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.flutter_photo_app">
+    package="com.lqd.flutter_photo_app">
    <application
         android:label="flutter_photo_app"
         android:name="${applicationName}"
