@@ -14,6 +14,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "108486831143-0ci4tov1965fapdfn0nk45dd3i842m0r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lqd.flutter_photo_app",
+            "certificate_hash": "80fb0b1281abc08765891865769dfa9c28488e32"
+          }
+        },
+        {
+          "client_id": "108486831143-9qd5o2r02cuj4mkso4nikfmmdq536g2b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lqd.flutter_photo_app",
+            "certificate_hash": "ab5314e820acee0d54867d632c6466c33ce266ee"
+          }
+        },
+        {
           "client_id": "108486831143-jiq1kotuffic3r5ss1um0gluq6dljn1l.apps.googleusercontent.com",
           "client_type": 3
         }
