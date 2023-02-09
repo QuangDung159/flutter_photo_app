@@ -65,6 +65,12 @@ android {
             storeFile file('debug-keystore.jks')
             storePassword 'android'
         }
+        release {
+            keyAlias 'release-keystore'
+            keyPassword 'android'
+            storeFile file('release-keystore.jks')
+            storePassword 'android'
+        }
     }
 
     buildTypes {
@@ -72,6 +78,11 @@ android {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.debug
+        }
+        release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig signingConfigs.release
         }
     }
 }
