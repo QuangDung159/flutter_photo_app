@@ -41,7 +41,7 @@ class MainAppBar extends StatelessWidget {
         );
       }
     } catch (error) {
-      print(error);
+      throw Exception(error);
     }
   }
 

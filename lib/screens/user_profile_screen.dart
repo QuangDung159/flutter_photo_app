@@ -52,9 +52,12 @@ class UserProfileScreen extends StatelessWidget {
           children: [
             Hero(
               tag: 'avatar',
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(15),
-                child: Image.network(googleInfo.photoUrl.value),
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(15),
+                  child: Image.network(googleInfo.photoUrl.value),
+                ),
               ),
             ),
             Container(

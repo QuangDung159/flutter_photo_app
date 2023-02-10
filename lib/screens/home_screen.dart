@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_photo_app/common/constants.dart';
-import 'package:flutter_photo_app/screens/MyHomePage.dart';
 import 'package:flutter_photo_app/screens/components/home_tab_grid_photos.dart';
 import 'package:flutter_photo_app/screens/components/home_tab_list_post.dart';
 import 'package:flutter_photo_app/screens/components/main_app_bar.dart';
@@ -38,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
     HomeTabGridPhoto(),
     HomeTabListPost(),
     // HomeTabListAlbum(),
-    MyHomePage()
+    // MyHomePage()
   ];
 
   @override
@@ -50,17 +49,17 @@ class _HomeScreenState extends State<HomeScreen> {
         child: MainAppBar(),
       ),
       body: _widgetOptions.elementAt(_selectedIndex),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          notificationService.showLocalNotification(
-            id: 1,
-            title: 'title',
-            body: 'body',
-            payload: 'payload',
-          );
-        },
-        child: Icon(Icons.abc),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     notificationService.showLocalNotification(
+      //       id: 1,
+      //       title: 'title',
+      //       body: 'body',
+      //       payload: 'payload',
+      //     );
+      //   },
+      //   child: Icon(Icons.abc),
+      // ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: primaryBackground,
         unselectedItemColor: Colors.grey,
@@ -78,10 +77,10 @@ class _HomeScreenState extends State<HomeScreen> {
           //   icon: Icon(Icons.abc),
           //   label: 'List album',
           // ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.abc),
-            label: 'My Home',
-          ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(Icons.abc),
+          //   label: 'My Home',
+          // ),
         ],
         currentIndex: _selectedIndex,
         onTap: onTap,

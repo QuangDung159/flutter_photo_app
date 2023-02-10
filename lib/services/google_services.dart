@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter_photo_app/utils/notification_service.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:http/http.dart' as http;
 import 'package:get/get.dart';
@@ -68,7 +69,21 @@ class GoogleServices {
       body: json,
     );
 
-    print('res: ${res.body}');
+    if (res.statusCode == 200) {
+      NotificationService().showLocalNotification(
+        id: 1,
+        title: title,
+        body: body,
+        payload: 'payload',
+      );
+    } else {
+      NotificationService().showLocalNotification(
+        id: 1,
+        title: 'Sorry, something went wrong',
+        body: 'Please try again later',
+        payload: 'payload',
+      );
+    }
   }
 
   static Future logout() async => _googleSignIn.disconnect();

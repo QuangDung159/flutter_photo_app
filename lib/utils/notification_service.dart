@@ -46,9 +46,11 @@ class NotificationService {
     );
   }
 
-  Future<NotificationDetails> _notificationDetails() async {
+  Future<NotificationDetails> _notificationDetails({String? imageUrl}) async {
     final bigPicture = await DownloadUtil.downloadAndSaveFile(
-        'https://lh3.googleusercontent.com/3i3ZbEBIj1SE7KEstNzBcmryg3KmLNzseBtqK1EJfXmnjKRfyu-JzbE3Ga61XD6x68LNzy4QeJkW7s6wZQtnNquFoTm6yE2ZD-HZoi1alZq823rqua48jYVg_jjrXdIDuNSyfMVsrdY1oCdobxBimiw7VguSKm1NlK0bcamvItyjomPY_iBUnaFTvbGnPqJZhA18K-4DdW_Z-kp7FYH6BrDlR2qk5dR_tMied3M3qRkTistC90J-Nb-aVatA9qf62iKgNXyN78y_UrgHS8uExbrugv7leXfYVnYqCbKpzqcrv82Sn_YUB92GNQhcYF2CQETMONFrUKK2E5me1vyRGar-QdlGSC7oEAJZ6isSduxhS5KjGEnZ7LMiVjppBwF4kS8vgmjdKdj798jvnTwt7tF3ql8dBa-TAZuBZSExsMVSI3iAY036rK7DraO1ez1bKAP19nWObH07MFwPklRpU8ycqBU4KL3tDVpH6JB-RKMDmDGEKmVwzw_5gt_xYzkVp0bf27XxTTZyL6xWqum3bueKm2ymgBdOnfFo-imw0mfHt5GAEpPo1sqPHi-YZgo7Y_Qv77YtttOdEaeR5qyWv9ACtAohWdXIA_s72ODD1QK_WReiVjXhjL0DLY-D260nIAekRq2FHzztU-wwCKQJbq7M4l0Qupgp_1KndnV9lL1slqfHpsgsnREDSh1_=w2044-h1532-no',
+        imageUrl != null && imageUrl != ''
+            ? imageUrl
+            : 'https://lh3.googleusercontent.com/3i3ZbEBIj1SE7KEstNzBcmryg3KmLNzseBtqK1EJfXmnjKRfyu-JzbE3Ga61XD6x68LNzy4QeJkW7s6wZQtnNquFoTm6yE2ZD-HZoi1alZq823rqua48jYVg_jjrXdIDuNSyfMVsrdY1oCdobxBimiw7VguSKm1NlK0bcamvItyjomPY_iBUnaFTvbGnPqJZhA18K-4DdW_Z-kp7FYH6BrDlR2qk5dR_tMied3M3qRkTistC90J-Nb-aVatA9qf62iKgNXyN78y_UrgHS8uExbrugv7leXfYVnYqCbKpzqcrv82Sn_YUB92GNQhcYF2CQETMONFrUKK2E5me1vyRGar-QdlGSC7oEAJZ6isSduxhS5KjGEnZ7LMiVjppBwF4kS8vgmjdKdj798jvnTwt7tF3ql8dBa-TAZuBZSExsMVSI3iAY036rK7DraO1ez1bKAP19nWObH07MFwPklRpU8ycqBU4KL3tDVpH6JB-RKMDmDGEKmVwzw_5gt_xYzkVp0bf27XxTTZyL6xWqum3bueKm2ymgBdOnfFo-imw0mfHt5GAEpPo1sqPHi-YZgo7Y_Qv77YtttOdEaeR5qyWv9ACtAohWdXIA_s72ODD1QK_WReiVjXhjL0DLY-D260nIAekRq2FHzztU-wwCKQJbq7M4l0Qupgp_1KndnV9lL1slqfHpsgsnREDSh1_=w2044-h1532-no',
         Platform.isIOS ? 'drinkwater.jpg' : 'drinkwater');
 
     AndroidNotificationDetails androidPlatformChannelSpecifics =
